@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Collections.Generic;
+using CapaNegocio;
+using CapaServicios;
+using CapaPersistencia.DAO;
+using NHibernate;
+using NHibernate.Cfg;
+
+namespace CapaPresentacion
+{
+    public partial class AltaLibro : System.Web.UI.Page
+    {
+        #region Eventos
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                this.CargarAutores();
+                this.CargarCategorias();
+            }
+        }
+
+        protected void BtnGuardar_Click(object sender, EventArgs e)
+        {
+
+          //  this.GetServicio().RegistrarLibro(
+ 
+        }
+
+        #endregion
+
+        #region Metodos Auxiliares
+
+        private void CargarAutores() 
+        {
+            IList<Autor> autores = this.GetServicio().ListarTodosAutores();
+            
+            foreach(Autor autor in autores)
+                this.ddlAutores.Items.Add(new ListItem( autor.Nombre + " "+ autor.Apellido, autor.Id.ToString()));
+        }
+      
+        private void CargarCategorias()
+        {
+            IList<Categoria> categorias = this.GetServicio().ListarTodosCategorias();
+
+            foreach ( Categoria categoria in categorias)
+                this.ddlCategorias.Items.Add(new ListItem(categoria.NombreCategoria , categoria.Id.ToString()));
+        }
+
+
+        private IBibliotecaService GetServicio()
+        {
+            ISessionFactory sf = (new NHibernate.Cfg.Configuration()).Configure().BuildSessionFactory();
+            return new BibliotecaService(new LibroDAO(sf), new AutorDAO(sf), new CategoriaDAO(sf), new SocioDAO(sf), new PrestamoDAO(sf), new PenalizacionDAO(sf));
+        }
+
+        #endregion
+
+    }
+}
