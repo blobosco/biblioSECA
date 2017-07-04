@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="CapaPresentacion.Master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Biblioteca SEAC</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="/estilo/estilos.css" media="screen" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <h1 class="SuperTitulo">
+            BiblioSECA
+        </h1>
+        <br />
+        <asp:LinkButton runat="server" ID="lnkGestionLibros" Text="Gestion de libros" OnClick="lnkGestionLibro_OnClick"
+            CausesValidation="false"></asp:LinkButton>
+        <asp:LinkButton runat="server" ID="LinkGestionSocio" Text="Gestion de socios" OnClick="lnkGestionSocios_OnClick"
+            CausesValidation="false"></asp:LinkButton>
+        <asp:LinkButton runat="server" ID="LinkGestionPrestamo" Text="Gestion de prestamos" OnClick="lnkGestionPrestamo_OnClick"
+            CausesValidation="false"></asp:LinkButton>
+        <asp:LinkButton runat="server" ID="LinkGestionDevolucion" Text="Gestion de devoluciones" OnClick="lnkGestionDevoluciones_OnClick"
+            CausesValidation="false"></asp:LinkButton>
+        <hr />
+        <br />
+        <asp:ContentPlaceHolder ID="ContenidoPrincipal" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<publishData>
+  <publishTarget publishUrl="C:\Users\mfredes\Desktop\BiblioSEAC\">
+    <file relUrl="bin/CapaNegocio.pdb" publishTime="06/08/2012 12:17:37" />
+    <file relUrl="Estilo/estilos.css" publishTime="06/14/2012 13:09:29" />
+    <file relUrl="BuscarLibro.aspx" publishTime="06/18/2012 10:23:34" />
+    <file relUrl="bin/CapaPresentacion.dll" publishTime="06/26/2012 16:21:54" />
+    <file relUrl="AltaLibro.aspx" publishTime="06/15/2012 15:18:27" />
+    <file relUrl="bin/NHibernate.dll" publishTime="07/19/2009 09:58:42" />
+    <file relUrl="Controles/UCFechaActual.ascx" publishTime="06/14/2012 11:54:57" />
+    <file relUrl="bin/Castle.DynamicProxy2.xml" publishTime="06/21/2009 10:10:06" />
+    <file relUrl="bin/log4net.xml" publishTime="06/21/2009 10:10:06" />
+    <file relUrl="GestionPrestamos.aspx" publishTime="06/21/2012 17:13:29" />
+    <file relUrl="bin/CapaExcepcion.dll" publishTime="06/22/2012 16:06:59" />
+    <file relUrl="EliminarSocio.aspx" publishTime="06/21/2012 14:41:05" />
+    <file relUrl="Master.Master" publishTime="06/25/2012 15:28:25" />
+    <file relUrl="bin/Castle.DynamicProxy2.dll" publishTime="06/21/2009 10:10:06" />
+    <file relUrl="bin/NHibernate.ByteCode.Castle.dll" publishTime="07/19/2009 09:58:46" />
+    <file relUrl="IngrearLibro.aspx" publishTime="06/14/2012 14:22:24" />
+    <file relUrl="bin/Castle.Core.xml" publishTime="06/21/2009 10:10:06" />
+    <file relUrl="bin/Antlr3.Runtime.dll" publishTime="06/21/2009 10:10:06" />
+    <file relUrl="AltaDevolucion.aspx" publishTime="06/26/2012 16:21:52" />
+    <file relUrl="AltaPrestamo.aspx" publishTime="06/25/2012 14:39:45" />
+    <file relUrl="bin/log4net.dll" publishTime="06/21/2009 10:10:06" />
+    <file relUrl="bin/Castle.Core.dll" publishTime="06/21/2009 10:10:06" />
+    <file relUrl="GestionSocios.aspx" publishTime="06/21/2012 14:55:46" />
+    <file relUrl="EditarSocio.aspx" publishTime="06/21/2012 15:14:52" />
+    <file relUrl="bin/NHibernate.xml" publishTime="07/19/2009 09:58:40" />
+    <file relUrl="bin/Iesi.Collections.xml" publishTime="07/19/2009 09:58:26" />
+    <file relUrl="Web.config" publishTime="06/14/2012 09:55:49" />
+    <file relUrl="GestionLibros.aspx" publishTime="06/18/2012 17:37:20" />
+    <file relUrl="bin/NHibernate.ByteCode.Castle.xml" publishTime="07/19/2009 09:58:46" />
+    <file relUrl="bin/CapaPersistencia.dll" publishTime="06/25/2012 13:13:39" />
+    <file relUrl="EditarLibro.aspx" publishTime="06/21/2012 16:24:04" />
+    <file relUrl="bin/CapaPersistencia.pdb" publishTime="06/25/2012 13:13:39" />
+    <file relUrl="bin/CapaServicios.dll" publishTime="06/26/2012 15:55:45" />
+    <file relUrl="bin/Iesi.Collections.dll" publishTime="07/19/2009 09:58:26" />
+    <file relUrl="bin/hibernate.cfg.xml" publishTime="06/18/2012 15:54:12" />
+    <file relUrl="bin/CapaPresentacion.pdb" publishTime="06/26/2012 16:21:54" />
+    <file relUrl="bin/CapaNegocio.dll" publishTime="06/08/2012 12:17:37" />
+    <file relUrl="GestionDevoluciones.aspx" publishTime="06/25/2012 17:12:42" />
+    <file relUrl="EliminarLibro.aspx" publishTime="06/19/2012 15:15:46" />
+    <file relUrl="hibernate.cfg.xml" publishTime="06/18/2012 15:54:12" />
+    <file relUrl="AltaSocio.aspx" publishTime="06/25/2012 14:47:23" />
+    <file relUrl="bin/CapaServicios.pdb" publishTime="06/26/2012 15:55:45" />
+    <file relUrl="bin/CapaExcepcion.pdb" publishTime="06/22/2012 16:06:58" />
+    <file relUrl="Controles/UCSaludoInicial.ascx" publishTime="06/14/2012 12:43:32" />
+    <file relUrl="BuscarSocio.aspx" publishTime="06/21/2012 10:32:55" />
+    <file relUrl="Global.asax" publishTime="06/18/2012 15:41:05" />
+    <file relUrl="Default.aspx" publishTime="06/15/2012 11:01:52" />
+  </publishTarget>
+</publishData>
