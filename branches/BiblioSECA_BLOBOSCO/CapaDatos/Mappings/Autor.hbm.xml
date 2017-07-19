@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CapaNegocio" namespace="CapaNegocio">
+  <class name="Autor">
+    
+    <id name="Id" column="IdAutor">
+      <generator class="identity" />
+    </id>
+
+    <property name="Nombre" column="Nombre" type="string" />
+    
+  </class>
+</hibernate-mapping>

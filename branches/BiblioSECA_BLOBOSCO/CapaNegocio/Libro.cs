@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CapaNegocio.Exceptions;
+using System.Text.RegularExpressions;
 
 namespace CapaNegocio
 {
@@ -12,23 +13,46 @@ namespace CapaNegocio
 
         public virtual string ISBN { get; set; }
 
-        public Libro() { }
+        public virtual string Titulo { get; set; }
 
-        public Libro(string ISBN)
+        public virtual Autor Autor { get; set; }
+
+        public virtual string Descripcion { get; set; }
+
+        public virtual  Categoria Categoria { get; set; }
+
+        public virtual Estado Estado { get; set; }
+
+        public virtual IList<Prestamo> Prestamos { get; set; }
+
+        public Libro()
         {
-            ValidateISBN(ISBN);
-
-            this.ISBN = ISBN;
+            this.Prestamos = new List<Prestamo>();
+            this.Estado = Estado.Activo;
         }
 
-        private void ValidateISBN(string ISBN)
+        public Libro(string isbn)
         {
-            foreach (char c in ISBN)
-            {
-                if (c < '0' || c > '9')
-                    throw new InvalidISBNException();
-            }
+            ValidarISBN(isbn);
+            this.ISBN = isbn;
+            this.Prestamos = new List<Prestamo>();
+            this.Estado = Estado.Activo;
         }
 
+        //XX-XXXX-XXX-X
+        public bool ValidarISBN(string isbn)
+        {
+            if (isbn == null)
+                return false;
+
+            Regex rgx = new Regex(@"^\d{2}(-\d{3})\d{1}(-\d{3})(-\d{1})$");
+            return rgx.IsMatch(isbn);
+        }
+
+        public virtual void AgregarPrestamo(Prestamo prestamo)
+        {
+            prestamo.Libro = this;
+            this.Prestamos.Add(prestamo);
+        }
     }
 }

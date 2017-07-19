@@ -96,7 +96,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\CuarentenaTestCase.cs" />
+    <Compile Include="Dominio\LibroTestCase.cs" />
+    <Compile Include="Dominio\PrestamoTestCase.cs" />
+    <Compile Include="Dominio\SocioTestCase.cs" />
+    <Compile Include="Persistencia\AutorPersistenceTestCase.cs" />
+    <Compile Include="Persistencia\CategoriaPersistenceTestCase.cs" />
     <Compile Include="Persistencia\LibroPersistenceTestCase.cs" />
+    <Compile Include="Persistencia\SocioPersistenceTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -116,11 +123,11 @@
   <ItemGroup>
     <Content Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAO\" />
-    <Folder Include="Dominio\" />
     <Folder Include="Servicios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

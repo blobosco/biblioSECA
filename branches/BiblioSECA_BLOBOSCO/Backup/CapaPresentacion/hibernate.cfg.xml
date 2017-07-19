@@ -8,10 +8,10 @@ for your own use before compile tests in VisualStudio.
 <hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
 	<session-factory>
 		<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
-    <property name="connection.connection_string">Data Source=10.2.1.70;Initial Catalog=BIBLIOSECA_BLOBOSCO;User Id=sa;Password=Delivery.08;</property>
+    <property name="connection.connection_string">Data Source=10.2.1.33;Initial Catalog=BIBLIOSECA;User Id=sa;Password=Delivery.08;</property>
     <property name="proxyfactory.factory_class">NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
 		<property name="dialect">NHibernate.Dialect.MsSql2000Dialect</property>
-    <property name="current_session_context_class">thread_static</property>
+    <property name="current_session_context_class">managed_web</property>
     <!--<property name="show_sql">true</property>-->
 
     <mapping assembly="CapaDatos" />
