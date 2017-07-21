@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CapaNegocio" namespace="CapaNegocio">
+  <class name="Penalizacion">
+
+    <id name="Id" column="IdPenalizacion">
+      <generator class="identity" />
+    </id>
+
+    <property name="FechaInicio" column="FechaInicio" type="DateTime" />
+    <property name="FechaCumplimiento" column="FechaCumplimiento" type="DateTime" />
+
+    <many-to-one name="Prestamo" class="Prestamo" column="IdPrestamo" cascade="none"></many-to-one>
+
+    </class>
+</hibernate-mapping>

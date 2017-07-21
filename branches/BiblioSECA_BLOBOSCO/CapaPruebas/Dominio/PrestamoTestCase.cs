@@ -34,7 +34,7 @@ namespace CapaPruebas.Dominio
         [Test]
         public void FechaVencimientoEsManiana_EstaVencido_False()
         {
-            DateTime FechaVencimiento = new DateTime(2017, 7, 6);
+            DateTime FechaVencimiento = new DateTime(2017, 7, 21);
 
             Prestamo primerPrestamo = new Prestamo(libro, socio, FechaVencimiento);
 

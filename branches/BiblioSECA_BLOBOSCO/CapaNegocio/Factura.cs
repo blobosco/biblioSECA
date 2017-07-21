@@ -9,6 +9,8 @@ namespace CapaNegocio
     {
         private const int LAPSO_FACTURAS = 10;
 
+        public virtual int Id { get; set; }
+
         public virtual DateTime? FechaRecepcion { get; set; }
 
         public Factura() { }

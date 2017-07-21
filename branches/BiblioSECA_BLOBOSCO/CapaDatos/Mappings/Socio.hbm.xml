@@ -9,6 +9,8 @@
     <property name="Nombre" column="Nombre" type="string" />
     <property name="Apellido" column="Apellido" type="string" />
     <property name="NombreUsuario" column="NombreUsuario" type="string" />
+    <property name="Estado" column="IdEstadoSocio" type="EstadoSocio, CapaNegocio"></property>
+
 
   </class>
 </hibernate-mapping>

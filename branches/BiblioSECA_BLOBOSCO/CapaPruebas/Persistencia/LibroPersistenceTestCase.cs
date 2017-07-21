@@ -38,7 +38,20 @@ namespace CapaPruebas.Persistencia
         public void CreaLibroNuevo_SaveOrUpdate_GuardaBienDatos()
         {
             Libro libro = new Libro();
-            libro.ISBN = "111";
+            libro.Titulo = "Harry Potter";
+            libro.Descripcion = "Harry es un mago que estudia en Hogwart";
+            libro.Estado = EstadoLibro.Disponible;
+            libro.ISBN = "11-4566-556-1";
+
+            Autor autor = new Autor();
+            autor.Nombre = "Juan";
+            this.Session.SaveOrUpdate(autor);
+            libro.Autor = autor;
+
+            Categoria categoria = new Categoria();
+            categoria.Nombre = "Terror";
+            this.Session.SaveOrUpdate(categoria);
+            libro.Categoria = categoria;
 
             this.Session.SaveOrUpdate(libro);
             this.Session.Flush();

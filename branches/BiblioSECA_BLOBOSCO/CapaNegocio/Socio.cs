@@ -18,7 +18,7 @@ namespace CapaNegocio
 
         public virtual String NombreUsuario { get; set; }
 
-        public virtual Estado Estado { get; set; }
+        public virtual EstadoSocio Estado { get; set; }
 
         public virtual IList<Prestamo> Prestamos { get; set; }
 
@@ -27,7 +27,7 @@ namespace CapaNegocio
         public Socio(string nombre, string apellido, string usuario)
         {
             this.Prestamos = new List<Prestamo>();
-            this.Estado = Estado.Activo;
+            this.Estado = EstadoSocio.Activo;
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.NombreUsuario = usuario;
@@ -41,7 +41,7 @@ namespace CapaNegocio
 
         private void ValidarHabilitado()
         {
-            if (this.Prestamos.Where(x => x.Estado == Estado.Activo).Count() >= MAXIMO_PRESTAMOS)
+            if (this.Prestamos.Where(x => x.Estado == EstadoPrestamo.Activo).Count() >= MAXIMO_PRESTAMOS)
             {
                 throw new SocioNoHabilitadoException();
             }

@@ -7,17 +7,19 @@ namespace CapaNegocio
 {
     public class Prestamo
     {
-        public DateTime FechaInicio { get; set; }
+        public virtual int Id { get; set; }
 
-        public DateTime FechaVencimiento { get; set; }
+        public virtual DateTime FechaInicio { get; set; }
 
-        public DateTime? FechaDevolucion { get; set; }
+        public virtual DateTime FechaVencimiento { get; set; }
 
-        public Libro Libro { get; set; }
+        public virtual DateTime? FechaDevolucion { get; set; }
 
-        public Socio Socio { get; set; }
+        public virtual Libro Libro { get; set; }
 
-        public Estado Estado { get; set; }
+        public virtual Socio Socio { get; set; }
+
+        public virtual EstadoPrestamo Estado { get; set; }
 
         public virtual IList<Penalizacion> Penalizaciones { get; set; }
 
@@ -25,16 +27,16 @@ namespace CapaNegocio
 
         public Prestamo(Libro libro, Socio socio, DateTime fechaVencimiento)
         {
-            this.Libro = libro;
-            this.Socio = socio;
-            this.FechaInicio = DateTime.Now;
-            this.FechaVencimiento = fechaVencimiento;
-            this.FechaDevolucion = null; 
-            this.Penalizaciones = new List<Penalizacion>();
-            this.Estado = Estado.Activo;
+           this.Libro = libro;
+           this.Socio = socio;
+           this.FechaInicio = DateTime.Now;
+           this.FechaVencimiento = fechaVencimiento;
+           this.FechaDevolucion = null; 
+           this.Penalizaciones = new List<Penalizacion>();
+           this.Estado = EstadoPrestamo.Activo;
         }
 
-        public int CantidadDeDiasTrascurridos ()
+        public virtual int CantidadDeDiasTrascurridos ()
         {
             TimeSpan diferenciaDeDias = FechaVencimiento - FechaInicio;
             return diferenciaDeDias.Days;
