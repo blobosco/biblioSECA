@@ -30,6 +30,7 @@ namespace CapaPruebas.Dominio
         public void SocioHabilitado_ValidarHabilitado_AgregaPrestamo()
         {
             DateTime FechaVencimiento = DateTime.Now.AddDays(2);
+
             Prestamo primerPrestamo = new Prestamo(libroUno, Socio, FechaVencimiento);
             Prestamo segundoPrestamo = new Prestamo(libroDos, Socio, FechaVencimiento);
 

@@ -19,16 +19,16 @@ namespace CapaNegocio
 
         public virtual string Descripcion { get; set; }
 
-        public virtual  Categoria Categoria { get; set; }
+        public virtual Categoria Categoria { get; set; }
 
-        public virtual Estado Estado { get; set; }
+        public virtual EstadoLibro Estado { get; set; }
 
         public virtual IList<Prestamo> Prestamos { get; set; }
 
         public Libro()
         {
             this.Prestamos = new List<Prestamo>();
-            this.Estado = Estado.Activo;
+            this.Estado = EstadoLibro.Disponible;
         }
 
         public Libro(string isbn)
@@ -36,11 +36,11 @@ namespace CapaNegocio
             ValidarISBN(isbn);
             this.ISBN = isbn;
             this.Prestamos = new List<Prestamo>();
-            this.Estado = Estado.Activo;
+            this.Estado = EstadoLibro.Disponible;
         }
 
         //XX-XXXX-XXX-X
-        public bool ValidarISBN(string isbn)
+        public virtual bool ValidarISBN(string isbn)
         {
             if (isbn == null)
                 return false;

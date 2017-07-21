@@ -55,7 +55,9 @@
     <Compile Include="Autor.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cuarentena.cs" />
-    <Compile Include="Estado.cs" />
+    <Compile Include="EstadoLibro.cs" />
+    <Compile Include="EstadoSocio.cs" />
+    <Compile Include="EstadoPrestamo.cs" />
     <Compile Include="Exceptions\InvalidISBNException.cs" />
     <Compile Include="Exceptions\SocioNoHabilitadoException.cs" />
     <Compile Include="Factura.cs" />

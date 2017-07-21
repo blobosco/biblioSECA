@@ -5,9 +5,10 @@ using System.Text;
 
 namespace CapaNegocio
 {
-    public enum Estado
+    public enum EstadoLibro
     {
-            Inactivo = 0,
-            Activo = 1
+        Disponible = 1,
+        Prestado = 2
     }
 }
+

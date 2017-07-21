@@ -40,6 +40,7 @@ namespace CapaPruebas.Persistencia
             socio.Nombre = "Jose";
             socio.Apellido = "Perez";
             socio.NombreUsuario = "jperez";
+            socio.Estado = EstadoSocio.Activo;
 
             this.Session.SaveOrUpdate(socio);
             this.Session.Flush();
@@ -51,6 +52,7 @@ namespace CapaPruebas.Persistencia
             Assert.AreEqual(socio.Nombre, socio2.Nombre);
             Assert.AreEqual(socio.Apellido, socio2.Apellido);
             Assert.AreEqual(socio.NombreUsuario, socio2.NombreUsuario);
+            Assert.AreEqual(socio.Estado, socio2.Estado);
         }
 
     }

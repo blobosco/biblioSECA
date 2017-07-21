@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CapaNegocio" namespace="CapaNegocio">
+  <joined-subclass name="Factura" extends="Penalizacion" table="Factura">
+    <key column="IdPenalizacion" />
+    <property name="FechaRecepcion" />
+  </joined-subclass>
+</hibernate-mapping>
