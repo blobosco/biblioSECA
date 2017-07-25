@@ -63,34 +63,34 @@ namespace CapaPruebas.Persistencia
             this.Session.SaveOrUpdate(socio);
 
             Prestamo prestamo = new Prestamo();
-            prestamo.FechaInicio = new DateTime(2017, 07, 22);
-            prestamo.FechaVencimiento = new DateTime(2017, 07, 24);
+            prestamo.FechaInicio = new DateTime(2017, 07, 24);
+            prestamo.FechaVencimiento = new DateTime(2017, 07, 26);
             prestamo.FechaDevolucion = null;
             prestamo.Estado = EstadoPrestamo.Activo;
             prestamo.Libro = libro;
             prestamo.Socio = socio;
             this.Session.SaveOrUpdate(prestamo);
 
-            Penalizacion penalizacion = new Cuarentena();
-            penalizacion.FechaInicio = DateTime.Now;
-            penalizacion.FechaCumplimiento = new DateTime(2017, 07, 23);
-            penalizacion.Prestamo = prestamo;
-            this.Session.SaveOrUpdate(penalizacion);
+            //Penalizacion penalizacion = new Cuarentena();
+            //penalizacion.FechaInicio = DateTime.Now;
+            //penalizacion.FechaCumplimiento = new DateTime(2017, 07, 23);
+            //penalizacion.Prestamo = prestamo;
+            //this.Session.SaveOrUpdate(penalizacion);
 
+            //Prestamo prestamoBase = this.Session.Load<Prestamo>(40);
             Cuarentena cuarentena = new Cuarentena();
-            cuarentena.FechaFinalizacion = new DateTime(2017, 07, 23);
+            cuarentena.FechaFinalizacion = new DateTime(2017, 07, 26);
+            cuarentena.FechaInicio = DateTime.Now;
+            cuarentena.FechaCumplimiento = new DateTime(2017, 07, 26);
+            cuarentena.Prestamo = prestamo;
 
             this.Session.SaveOrUpdate(cuarentena);
             this.Session.Flush();
-            this.Session.Clear();
-
             Cuarentena cuarentena2 = this.Session.Load<Cuarentena>(cuarentena.Id);
 
             Assert.IsTrue(prestamo.Id > 0);
             Assert.AreEqual(cuarentena.Id, cuarentena2.Id);
             Assert.AreEqual(cuarentena.FechaFinalizacion, cuarentena2.FechaFinalizacion);
         }
-
-
     }
 }
