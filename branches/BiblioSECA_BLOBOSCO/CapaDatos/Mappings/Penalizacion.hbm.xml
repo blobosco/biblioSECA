@@ -11,5 +11,16 @@
 
     <many-to-one name="Prestamo" class="Prestamo" column="IdPrestamo" cascade="none"></many-to-one>
 
-    </class>
+    <joined-subclass name="Cuarentena" extends="Penalizacion">
+      <key column="IdPenalizacion" />
+      <property name="IdCuarentena" column="IdCuarentena" />
+      <property name="FechaFinalizacion" column="FechaFinalizacion" />
+    </joined-subclass>
+    <joined-subclass name="Factura" extends="Penalizacion">
+      <key column="IdPenalizacion" />
+      <property name="IdFactura" column="IdFactura" />
+      <property name="FechaRecepcion" column="FechaRecepcion" />
+    </joined-subclass>
+    
+   </class>
 </hibernate-mapping>
