@@ -11,7 +11,7 @@ using CapaServicios.Factory;
 namespace CapaPruebas.Persistencia
 {
     [TestFixture]
-    public class PenalizacionPersistenceTestCase
+    public class CuarentenaPersistenceTestCase
     {
         private ISessionFactory SessionFactory;
 
@@ -70,12 +70,6 @@ namespace CapaPruebas.Persistencia
             prestamo.Libro = libro;
             prestamo.Socio = socio;
             this.Session.SaveOrUpdate(prestamo);
-
-            //Penalizacion penalizacion = new Cuarentena();
-            //penalizacion.FechaInicio = DateTime.Now;
-            //penalizacion.FechaCumplimiento = new DateTime(2017, 07, 23);
-            //penalizacion.Prestamo = prestamo;
-            //this.Session.SaveOrUpdate(penalizacion);
 
             //Prestamo prestamoBase = this.Session.Load<Prestamo>(40);
             Cuarentena cuarentena = new Cuarentena();

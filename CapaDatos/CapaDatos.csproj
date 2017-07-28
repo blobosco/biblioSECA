@@ -52,8 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AutorDAO.cs" />
+    <Compile Include="DAO\CategoriaDAO.cs" />
+    <Compile Include="DAO\IPenalizacionDAO.cs" />
+    <Compile Include="DAO\IPrestamoDAO.cs" />
+    <Compile Include="DAO\IAutorDAO.cs" />
+    <Compile Include="DAO\ICategoriaDAO.cs" />
     <Compile Include="DAO\ILibroDAO.cs" />
+    <Compile Include="DAO\ISocioDAO.cs" />
     <Compile Include="DAO\LibroDAO.cs" />
+    <Compile Include="DAO\PenalizacionDAO.cs" />
+    <Compile Include="DAO\PrestamoDAO.cs" />
+    <Compile Include="DAO\SocioDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

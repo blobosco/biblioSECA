@@ -7,7 +7,7 @@ namespace CapaNegocio
 {
     public enum EstadoSocio
     {
-            Activo = 1,
-            Inactivo = 2
+          Activo = 1,
+          Inactivo = 2
     }
 }
