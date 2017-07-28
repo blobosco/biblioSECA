@@ -14,5 +14,8 @@ namespace CapaNegocio
         //public List<Libro> librosEscritos;
 
         public Autor() { }
+
+        
+        
     }
 }

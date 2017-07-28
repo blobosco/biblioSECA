@@ -96,13 +96,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AutorDAOTestCase.cs" />
+    <Compile Include="DAO\CategoriaDAOTestCase.cs" />
+    <Compile Include="DAO\LibroDAOTestCase.cs" />
+    <Compile Include="DAO\PenalizacionDAOTestCase.cs" />
+    <Compile Include="DAO\PrestamoDAOTestCase.cs" />
+    <Compile Include="DAO\SocioDAOTestCase.cs" />
     <Compile Include="Dominio\LibroTestCase.cs" />
     <Compile Include="Dominio\PrestamoTestCase.cs" />
     <Compile Include="Dominio\SocioTestCase.cs" />
     <Compile Include="Persistencia\AutorPersistenceTestCase.cs" />
     <Compile Include="Persistencia\CategoriaPersistenceTestCase.cs" />
+    <Compile Include="Persistencia\FacturaPersistenceTestCase.cs" />
     <Compile Include="Persistencia\LibroPersistenceTestCase.cs" />
-    <Compile Include="Persistencia\PenalizacionPersistenceTestCase.cs" />
+    <Compile Include="Persistencia\CuarentenaPersistenceTestCase.cs" />
     <Compile Include="Persistencia\PrestamoPersistenceTestCase.cs" />
     <Compile Include="Persistencia\SocioPersistenceTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,7 +135,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAO\" />
     <Folder Include="Servicios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

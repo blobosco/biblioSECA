@@ -11,5 +11,19 @@ namespace CapaDatos.DAO
         Libro GetById(int id);
 
         void Save(Libro libro);
+
+        Libro GetLibrosByIsbnHQL(string isbn);
+
+        IList<Libro> GetLibrosByIdAutor(int idAutor);
+
+        IList<Libro> GetLibrosByIdCategoria(int idCategoria);
+
+        IList<Libro> GetLibrosByComienzoDelTituloHQL(string tituloLibro);
+
+        IList<Libro> GetLibrosByTitulo(string tituloLibro);
+
+        IList<Libro> GetLibrosByDescripcion(string descripcionLibro);
+
+        IList<Libro> GetAllLibros();
     }
 }
