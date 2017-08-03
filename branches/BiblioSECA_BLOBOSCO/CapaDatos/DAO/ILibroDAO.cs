@@ -24,6 +24,8 @@ namespace CapaDatos.DAO
 
         IList<Libro> GetLibrosByDescripcion(string descripcionLibro);
 
+        IList<String> GetLibrosByIdSocioPrestamo(int idSocio);
+
         IList<Libro> GetAllLibros();
     }
 }
