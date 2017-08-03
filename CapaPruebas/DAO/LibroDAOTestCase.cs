@@ -122,6 +122,21 @@ namespace CapaPruebas.DAO
             Assert.IsTrue(libros.Count > 0);
         }
 
+        [Test]
+        public void TestGetLibrosByIdSocioPrestamo_GetLibrosByIdSocioPrestamo_OK()
+        {
+            Socio socio = GetSession().Load<Socio>(56);
+            Libro libro = GetSession().Load<Libro>(67);
+
+            IList<String> titulosLibros = LibroDAO.GetLibrosByIdSocioPrestamo(socio.Id);
+
+            Assert.IsNotNull(titulosLibros);
+            Assert.IsTrue(titulosLibros.Count > 0);
+            Assert.AreEqual(titulosLibros.First(), libro.Titulo);
+        }
+
+        
+
     }
 
 }

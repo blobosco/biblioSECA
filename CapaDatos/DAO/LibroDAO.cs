@@ -91,11 +91,23 @@ namespace CapaDatos.DAO
             return criteria.List<Libro>();
         }
 
+        public IList<String> GetLibrosByIdSocioPrestamo(int idSocio)
+        {
+            StringBuilder query = new StringBuilder();
+
+            query.Append("Select l.Titulo from Libro l, Prestamo p where p.Libro.Id = l.Id and p.Socio = :idSocio");
+
+            IQuery resultado = this.GetSession().CreateQuery(query.ToString());
+
+            resultado.SetParameter("idSocio", idSocio);
+
+            return resultado.List<String>();
+        }
+
         public IList<Libro> GetAllLibros()
         {
             ICriteria criteria = this.GetSession().CreateCriteria(typeof(Libro));
             return criteria.List<Libro>();
         }
-
     }
 }
