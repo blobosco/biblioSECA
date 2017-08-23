@@ -62,5 +62,29 @@ namespace CapaDatos.DAO
             ICriteria criteria = this.GetSession().CreateCriteria(typeof(Socio));
             return criteria.List<Socio>();
         }
+
+
+        public IList<Socio> GetLos5SociosMasPenalizados()
+        {
+            StringBuilder query = new StringBuilder();
+
+            //query.Append("select p.Socio " );
+            //query.Append("from Prestamo p, Penalizacion pen ");
+            //query.Append("where p.Id = pen.Prestamo.Id ");
+            ////query.Append("GROUP BY p.Socio.Id ");
+            //query.Append("ORDER BY p.Socio.Id DESC");
+
+            query.Append("select p.Socio, COUNT(*) totalPenalizaciones ");
+            query.Append("from Prestamo p, Penalizacion pen ");
+            query.Append("where p.Id = pen.Prestamo.Id ");
+            //query.Append("GROUP BY p.Socio.Id ");
+            query.Append("ORDER BY totalPenalizaciones DESC");
+
+            IQuery resultado = this.GetSession().CreateQuery(query.ToString());
+
+            //resultado.SetParameter("idSocio", idSocio);
+
+            return resultado.List<Socio>().Take(5).ToList();
+        }
     }
 }
