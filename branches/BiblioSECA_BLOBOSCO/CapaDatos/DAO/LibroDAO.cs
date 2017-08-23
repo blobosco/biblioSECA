@@ -91,7 +91,7 @@ namespace CapaDatos.DAO
             return criteria.List<Libro>();
         }
 
-        public IList<String> GetLibrosByIdSocioPrestamo(int idSocio)
+        public IList<String> GetTitulosLibrosByIdSocioPrestamo(int idSocio)
         {
             StringBuilder query = new StringBuilder();
 
@@ -108,6 +108,27 @@ namespace CapaDatos.DAO
         {
             ICriteria criteria = this.GetSession().CreateCriteria(typeof(Libro));
             return criteria.List<Libro>();
+        }
+
+
+        public IList<String> GetTitulosLibrosPrestadosYPenalizados()
+        {
+            StringBuilder query = new StringBuilder();
+
+            query.Append("Select l.Titulo from Libro l, Prestamo p, Penalizacion pen where p.Libro.Id = l.Id and p.Id = pen.Prestamo.Id");
+
+            IQuery resultado = this.GetSession().CreateQuery(query.ToString());
+
+           //resultado.SetParameter("idSocio", idSocio);
+
+            return resultado.List<String>();
+        }
+
+
+        public IList<int> GetLibrosConMayorCantidadDePenalizaciones()
+        {
+            var query = GetSession().CreateSQLQuery("SELECT DISTINCT l, COUNT(*) AS totalPenalizaciones FROM Libro l, Prestamo p, Penalizacion pen WHERE l.IdLibro = p.IdLibro AND p.IdPrestamo = pen.IdPrestamo GROUP BY l.IdLibro ORDER BY totalPenalizaciones DESC");
+            return query.List<int>();
         }
     }
 }

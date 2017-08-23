@@ -123,20 +123,41 @@ namespace CapaPruebas.DAO
         }
 
         [Test]
-        public void TestGetLibrosByIdSocioPrestamo_GetLibrosByIdSocioPrestamo_OK()
+        public void TestGetTitulosLibrosByIdSocioPrestamo_GetTitulosLibrosByIdSocioPrestamo_OK()
         {
             Socio socio = GetSession().Load<Socio>(56);
             Libro libro = GetSession().Load<Libro>(67);
 
-            IList<String> titulosLibros = LibroDAO.GetLibrosByIdSocioPrestamo(socio.Id);
+            IList<String> titulosLibros = LibroDAO.GetTitulosLibrosByIdSocioPrestamo(socio.Id);
 
             Assert.IsNotNull(titulosLibros);
             Assert.IsTrue(titulosLibros.Count > 0);
             Assert.AreEqual(titulosLibros.First(), libro.Titulo);
         }
 
-        
+        [Test]
+        public void TestGetTitulosLibrosPrestadosYPenalizados_GetTitulosLibrosPrestadosYPenalizados_OK()
+        {
+            Libro libro = GetSession().Load<Libro>(53);
 
+            IList<String> titulosLibros = LibroDAO.GetTitulosLibrosPrestadosYPenalizados();
+
+            Assert.IsNotNull(titulosLibros);
+            Assert.IsTrue(titulosLibros.Count > 0);
+            Assert.AreEqual(titulosLibros.First(), libro.Titulo);
+        }
+
+        [Test]
+        public void TestGetLibrosConMayorCantidadDePenalizaciones_GetLibrosConMayorCantidadDePenalizaciones_OK()
+        {
+            Libro libro = GetSession().Load<Libro>(52);
+
+            IList<int> IdLibros = LibroDAO.GetLibrosConMayorCantidadDePenalizaciones();
+
+            Assert.IsNotNull(IdLibros);
+            Assert.IsTrue(IdLibros.Count > 0);
+            Assert.AreEqual(IdLibros.First(), libro.Id);
+        }
     }
 
 }

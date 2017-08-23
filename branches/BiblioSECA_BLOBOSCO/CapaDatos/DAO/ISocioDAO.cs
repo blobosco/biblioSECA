@@ -19,6 +19,8 @@ namespace CapaDatos.DAO
         Socio GetSocioByNombreUsuario(string nombreUsuarioSocio);
 
         IList<Socio> GetAllSocios();
+
+        IList<Socio> GetLos5SociosMasPenalizados();
     }
 
 }

@@ -83,5 +83,17 @@ namespace CapaPruebas.DAO
             Assert.IsTrue(socios.Count > 0);
         }
 
+        [Test]
+        public void TestGetLos5SociosMasPenalizados_GetLos5SociosMasPenalizados_OK()
+        {
+            Socio socio = GetSession().Load<Socio>(54);
+
+            IList<Socio> socios = SocioDAO.GetLos5SociosMasPenalizados();
+
+            Assert.IsNotNull(socios);
+            Assert.IsTrue(socios.Count > 0);
+            Assert.AreEqual(socios.First().Id, socio.Id);
+        }
+
     }
 }
