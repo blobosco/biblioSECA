@@ -9,7 +9,7 @@ namespace CapaNegocio
 {
     public class Libro
     {
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
 
         public virtual string ISBN { get; set; }
 

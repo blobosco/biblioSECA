@@ -17,7 +17,7 @@ namespace CapaDatos.DAO
             this.SessionFactory = sesssionFactory;
         }
 
-        public Libro GetById(int id)
+        public Libro GetById(long id)
         {
             ISession session = this.GetSession();
             return session.Load<Libro>(id);
@@ -33,7 +33,7 @@ namespace CapaDatos.DAO
             return this.SessionFactory.GetCurrentSession();
         }
 
-        public Libro GetLibrosByIsbnHQL(string ISBN)
+        public Libro GetLibroByIsbnHQL(string ISBN)
         {
             StringBuilder query = new StringBuilder();
 
@@ -46,7 +46,7 @@ namespace CapaDatos.DAO
             return resultado.UniqueResult<Libro>();
         }
 
-        public IList<Libro> GetLibrosByIdAutor(int idAutor)
+        public IList<Libro> GetLibrosByIdAutor(long idAutor)
         {
             ICriteria criteria = this.GetSession().CreateCriteria(typeof(Libro));
             criteria.Add(Restrictions.Eq("Autor.Id", idAutor));
@@ -54,7 +54,7 @@ namespace CapaDatos.DAO
             return criteria.List<Libro>();
         }
 
-        public IList<Libro> GetLibrosByIdCategoria(int idCategoria)
+        public IList<Libro> GetLibrosByIdCategoria(long idCategoria)
         {
             ICriteria criteria = this.GetSession().CreateCriteria(typeof(Libro));
             criteria.Add(Restrictions.Eq("Categoria.Id", idCategoria));
@@ -91,7 +91,7 @@ namespace CapaDatos.DAO
             return criteria.List<Libro>();
         }
 
-        public IList<String> GetTitulosLibrosByIdSocioPrestamo(int idSocio)
+        public IList<String> GetTitulosLibrosByIdSocioPrestamo(long idSocio)
         {
             StringBuilder query = new StringBuilder();
 
@@ -119,16 +119,9 @@ namespace CapaDatos.DAO
 
             IQuery resultado = this.GetSession().CreateQuery(query.ToString());
 
-           //resultado.SetParameter("idSocio", idSocio);
+            //resultado.SetParameter("idSocio", idSocio);
 
             return resultado.List<String>();
-        }
-
-
-        public IList<int> GetLibrosConMayorCantidadDePenalizaciones()
-        {
-            var query = GetSession().CreateSQLQuery("SELECT DISTINCT l, COUNT(*) AS totalPenalizaciones FROM Libro l, Prestamo p, Penalizacion pen WHERE l.IdLibro = p.IdLibro AND p.IdPrestamo = pen.IdPrestamo GROUP BY l.IdLibro ORDER BY totalPenalizaciones DESC");
-            return query.List<int>();
         }
     }
 }

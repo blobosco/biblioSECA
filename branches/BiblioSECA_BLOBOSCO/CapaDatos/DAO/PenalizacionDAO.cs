@@ -22,7 +22,7 @@ namespace CapaDatos.DAO
             return this.SessionFactory.GetCurrentSession();
         }
 
-        public Penalizacion GetById(int id)
+        public Penalizacion GetById(long id)
         {
             ISession session = this.GetSession();
             return session.Load<Penalizacion>(id);

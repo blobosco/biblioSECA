@@ -45,7 +45,7 @@ namespace CapaPruebas.DAO
         {
             Libro libroBase = this.GetSession().Load<Libro>(50);
 
-            Libro libroPrueba = LibroDAO.GetLibrosByIsbnHQL("11-4566-556-1");
+            Libro libroPrueba = LibroDAO.GetLibroByIsbnHQL("11-4566-556-1");
 
             Assert.IsNotNull(libroPrueba);
             Assert.AreEqual(libroBase.ISBN, libroPrueba.ISBN);
@@ -145,18 +145,6 @@ namespace CapaPruebas.DAO
             Assert.IsNotNull(titulosLibros);
             Assert.IsTrue(titulosLibros.Count > 0);
             Assert.AreEqual(titulosLibros.First(), libro.Titulo);
-        }
-
-        [Test]
-        public void TestGetLibrosConMayorCantidadDePenalizaciones_GetLibrosConMayorCantidadDePenalizaciones_OK()
-        {
-            Libro libro = GetSession().Load<Libro>(52);
-
-            IList<int> IdLibros = LibroDAO.GetLibrosConMayorCantidadDePenalizaciones();
-
-            Assert.IsNotNull(IdLibros);
-            Assert.IsTrue(IdLibros.Count > 0);
-            Assert.AreEqual(IdLibros.First(), libro.Id);
         }
     }
 

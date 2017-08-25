@@ -8,7 +8,7 @@ namespace CapaDatos.DAO
 {
     public interface IPrestamoDAO
     {
-        Prestamo GetById(int id);
+        Prestamo GetById(long id);
 
         void Save(Prestamo prestamo);
 
@@ -18,9 +18,9 @@ namespace CapaDatos.DAO
 
         IList<Prestamo> GetPrestamosByFechaDevolucion(DateTime fechaDevolucion);
 
-        IList<Prestamo> GetPrestamosByIdSocio(int idSocio);
+        IList<Prestamo> GetPrestamosByIdSocio(long idSocio);
 
-        Prestamo GetPrestamoByIdLibro(int idLibro);
+        Prestamo GetPrestamoByIdLibro(long idLibro);
 
         IList<Prestamo> GetAllPrestamos();
     }

@@ -10,7 +10,7 @@ namespace CapaNegocio
     {
         private const int MAXIMO_PRESTAMOS = 2;
 
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
 
         public virtual String Nombre { get; set; }
 

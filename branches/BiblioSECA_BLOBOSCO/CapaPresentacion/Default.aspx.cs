@@ -16,18 +16,18 @@ using CapaServicios;
 
 namespace CapaPresentacion
 {
-    public partial class _Default : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+    //public partial class _Default : System.Web.UI.Page
+    //{
+    //    protected void Page_Load(object sender, EventArgs e)
+    //    {
 
-        }
+    //    }
 
-        private IBibliotecaService GetServicio()
-        {
-            ISessionFactory sf = (new NHibernate.Cfg.Configuration()).Configure().BuildSessionFactory();
+    //    private IBibliotecaService GetServicio()
+    //    {
+    //        ISessionFactory sf = (new NHibernate.Cfg.Configuration()).Configure().BuildSessionFactory();
 
-            return new BibliotecaService(FactoryDAO.Instance.GetLibroDAO());
-        }
-    }
+    //        return new BibliotecaService(FactoryDAO.Instance.GetLibroDAO());
+    //    }
+    //}
 }
