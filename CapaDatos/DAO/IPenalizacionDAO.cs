@@ -8,7 +8,7 @@ namespace CapaDatos.DAO
 {
     public interface IPenalizacionDAO
     {
-        Penalizacion GetById(int id);
+        Penalizacion GetById(long id);
 
         void Save(Penalizacion penalizacion);
 

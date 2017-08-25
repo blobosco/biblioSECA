@@ -7,7 +7,7 @@ namespace CapaNegocio
 {
     public class Autor
     {
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
 
         public virtual String Nombre { get; set; }
 

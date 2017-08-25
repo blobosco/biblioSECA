@@ -8,7 +8,7 @@ namespace CapaDatos.DAO
 {
     public interface IAutorDAO
     {
-        Autor GetById(int id);
+        Autor GetById(long id);
 
         void Save(Autor autor);
 

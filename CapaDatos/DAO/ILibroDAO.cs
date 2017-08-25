@@ -8,15 +8,15 @@ namespace CapaDatos.DAO
 {
     public interface ILibroDAO
     {
-        Libro GetById(int id);
+        Libro GetById(long id);
 
         void Save(Libro libro);
 
-        Libro GetLibrosByIsbnHQL(string isbn);
+        Libro GetLibroByIsbnHQL(string isbn);
 
-        IList<Libro> GetLibrosByIdAutor(int idAutor);
+        IList<Libro> GetLibrosByIdAutor(long idAutor);
 
-        IList<Libro> GetLibrosByIdCategoria(int idCategoria);
+        IList<Libro> GetLibrosByIdCategoria(long idCategoria);
 
         IList<Libro> GetLibrosByComienzoDelTituloHQL(string tituloLibro);
 
@@ -24,11 +24,9 @@ namespace CapaDatos.DAO
 
         IList<Libro> GetLibrosByDescripcion(string descripcionLibro);
 
-        IList<String> GetTitulosLibrosByIdSocioPrestamo(int idSocio);
+        IList<String> GetTitulosLibrosByIdSocioPrestamo(long idSocio);
 
         IList<String> GetTitulosLibrosPrestadosYPenalizados();
-
-        IList<int> GetLibrosConMayorCantidadDePenalizaciones();
 
         IList<Libro> GetAllLibros();
     }

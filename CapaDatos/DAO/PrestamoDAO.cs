@@ -22,7 +22,7 @@ namespace CapaDatos.DAO
             return this.SessionFactory.GetCurrentSession();
         }
 
-        public Prestamo GetById(int id)
+        public Prestamo GetById(long id)
         {
             ISession session = this.GetSession();
             return session.Load<Prestamo>(id);
@@ -57,7 +57,7 @@ namespace CapaDatos.DAO
             return criteria.List<Prestamo>();
         }
 
-        public IList<Prestamo> GetPrestamosByIdSocio(int idSocio)
+        public IList<Prestamo> GetPrestamosByIdSocio(long idSocio)
         {
             ICriteria criteria = this.GetSession().CreateCriteria(typeof(Prestamo));
             criteria.Add(Restrictions.Eq("Socio.Id", idSocio));
@@ -65,7 +65,7 @@ namespace CapaDatos.DAO
             return criteria.List<Prestamo>();
         }
 
-        public Prestamo GetPrestamoByIdLibro(int idLibro)
+        public Prestamo GetPrestamoByIdLibro(long idLibro)
         {
             ICriteria criteria = this.GetSession().CreateCriteria(typeof(Prestamo));
             criteria.Add(Restrictions.Eq("Libro.Id", idLibro));

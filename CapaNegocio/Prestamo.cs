@@ -7,7 +7,7 @@ namespace CapaNegocio
 {
     public class Prestamo
     {
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
 
         public virtual DateTime FechaInicio { get; set; }
 

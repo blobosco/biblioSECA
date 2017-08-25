@@ -8,14 +8,13 @@ namespace CapaDatos.DAO
 {
     public interface ICategoriaDAO
     {
-        Categoria GetById(int id);
+        Categoria GetById(long id);
 
         void Save(Categoria categoria);
 
         Categoria GetCategoriaByNombre(string nombreCategoria);
 
         IList<Categoria> GetAllCategorias();
-
     }
 
 }

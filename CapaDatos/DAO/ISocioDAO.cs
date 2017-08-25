@@ -8,7 +8,7 @@ namespace CapaDatos.DAO
 {
     public interface ISocioDAO
     {
-        Socio GetById(int id);
+        Socio GetById(long id);
 
         void Save(Socio socio);
 

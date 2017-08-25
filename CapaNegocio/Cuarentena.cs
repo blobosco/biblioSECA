@@ -7,7 +7,7 @@ namespace CapaNegocio
 {
     public class Cuarentena : Penalizacion
     {
-        public virtual int IdCuarentena { get; set; }
+        public virtual long IdCuarentena { get; set; }
 
         public virtual DateTime FechaFinalizacion { get; set; }
 

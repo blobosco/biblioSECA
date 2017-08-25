@@ -10,6 +10,12 @@ namespace CapaServicios
 {
     public interface IBibliotecaService
     {
-        void RegistrarLibro(string isbn);
+        void RegistrarLibro(LibroDTO libroDTO);
+
+        void CrearLibro(LibroDTO libroDTO);
+
+        IList<LibroDTO> GetLibrosByAutor(long idAutor);
+
+        void SetLibroFromDTO(LibroDTO libroDTO, Libro libro);
     }
 }

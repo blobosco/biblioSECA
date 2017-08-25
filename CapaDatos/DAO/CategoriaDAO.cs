@@ -22,7 +22,7 @@ namespace CapaDatos.DAO
             return this.SessionFactory.GetCurrentSession();
         }
 
-        public Categoria GetById(int id)
+        public Categoria GetById(long id)
         {
             ISession session = this.GetSession();
             return session.Load<Categoria>(id);
